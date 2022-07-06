@@ -3,5 +3,7 @@ body {
 
 .navbar-brand {
   color: darkgoldenrod; }
+  .navbar-brand:hover {
+    color: darkgoldenrod; }
 
 /*# sourceMappingURL=style.css.map */

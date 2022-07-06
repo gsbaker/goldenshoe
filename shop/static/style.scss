@@ -4,4 +4,8 @@ body {
 
 .navbar-brand {
   color: darkgoldenrod;
+
+  &:hover {
+    color: darkgoldenrod;
+  }
 }
