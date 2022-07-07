@@ -13,8 +13,17 @@ class SizeForm(ModelForm):
         super(SizeForm, self).__init__(*args, **kwargs)
         product = self.initial['product']
         size_set = product.sizes
+        # [7,8,9,10,11,12]
+
         self.fields['sizes'] = forms.ModelChoiceField(
             queryset=size_set,
-            widget=forms.RadioSelect,
+            widget=forms.RadioSelect(
+                attrs={
+                    'class': 'btn-check',
+                    'autocomplete': 'off',
+                    'disabled': False,
+                }
+            ),
             label="Size",
         )
+
