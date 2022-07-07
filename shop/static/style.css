@@ -1,9 +1,16 @@
 body {
-  font-family: 'Sora', sans-serif; }
+  font-family: 'Sora', sans-serif;
+  background-color: #FFFAEB; }
 
 .navbar-brand {
   color: darkgoldenrod; }
   .navbar-brand:hover {
     color: darkgoldenrod; }
+
+.carousel {
+  width: 750px; }
+  .carousel .carousel-item img {
+    width: 500px;
+    border-radius: 20px; }
 
 /*# sourceMappingURL=style.css.map */

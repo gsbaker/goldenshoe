@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container pt-4">
+        <div class="d-flex flex-wrap">
+            <div class="p-2 fs-5">
+                <h1 class="m-0">{{ product.name }}</h1>
+                <h3 class="text-muted">{{ product.brand }}</h3>
+                <p>£{{ product.price }}</p>
+                <form action="" method="post">
+                    {% csrf_token %}
+{#                    {{ form }}#}
+                    {{ form.non_field_errors }}
+
+            {% for hidden_field in form.hidden_fields %}
+                {{ hidden_field.errors }}
+                {{ hidden_field }}
+            {% endfor %}
+                <ul class="list-unstyled">
+                {% for size in form.sizes %}
+                    <li class="fs-5"> {{ size.tag }} {{ size.choice_label }}</li>
+                {% endfor %}
+            </ul>
+                    <input type="submit" class="btn btn-outline-dark" value="add to basket">
+                </form>
+{#                <a class="btn btn-outline-dark">add to basket</a>#}
+            </div>
+                <div id="carouselExampleControls" class="carousel slide carousel-fade carousel-dark p-2" data-bs-interval="false">
+                    {% for img in product.images.all %}
+                        {% if forloop.first %}
+                            <div class="carousel-item active">
+                                <img src="/media/{{ img.image.name }}" alt="" class="d-block border border-dark m-auto">
+                            </div>
+                        {% else %}
+                            <div class="carousel-item">
+                                <img src="/media/{{ img.image.name }}" alt="" class="d-block border border-dark text-black m-auto">
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+
+    </div>
+{% endblock %}

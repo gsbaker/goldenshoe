@@ -1,5 +1,6 @@
 body {
   font-family: 'Sora', sans-serif;
+  background-color: #FFFAEB;
 }
 
 .navbar-brand {
@@ -7,5 +8,17 @@ body {
 
   &:hover {
     color: darkgoldenrod;
+  }
+}
+
+$carousel-width: 500px;
+
+.carousel {
+  width: $carousel-width*1.5;
+  .carousel-item {
+    img {
+      width: $carousel-width;
+      border-radius: 20px;
+    }
   }
 }

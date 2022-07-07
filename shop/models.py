@@ -22,3 +22,16 @@ class ProductImage(models.Model):
     product = models.ForeignKey(Product, related_name='images', on_delete=models.CASCADE)
     image = models.ImageField(upload_to='shoes')
 
+
+class ProductSize(models.Model):
+    product = models.ForeignKey(Product, related_name='sizes', on_delete=models.CASCADE)
+    number = models.IntegerField(default=0)
+    in_stock = models.BooleanField(default=True)
+
+    def __str__(self):
+        return str(self.number)
+
+
+class ProductSizes(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
+    sizes = models.ForeignKey(ProductSize, on_delete=models.DO_NOTHING)
