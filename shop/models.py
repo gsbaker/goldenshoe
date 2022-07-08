@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -35,3 +36,11 @@ class ProductSize(models.Model):
 class ProductSizes(models.Model):
     product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
     sizes = models.ForeignKey(ProductSize, on_delete=models.DO_NOTHING)
+
+
+class BasketItem(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    size = models.ForeignKey(ProductSize, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.product.name + ' (Size: {size})'.format(size=str(self.size.number))

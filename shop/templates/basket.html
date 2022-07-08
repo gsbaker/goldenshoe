@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+
+    <h1>Basket</h1>
+
+        {% for basket_item in basket_items %}
+            <div class="d-flex align-items-center">
+            <div class="p-2">
+                <img src="/media/{{ basket_item.product.images.all.0.image.name }}" alt="" class="basket-img border">
+            </div>
+            <div class="p-2">
+                <p>{{ basket_item.product.name }}</p>
+                <p>Size: {{ basket_item.size }}</p>
+            </div>
+
+            </div>
+
+        {% endfor %}
+
+
+
+    <div class="mt-3">
+        <a class="btn btn-sm btn-dark">Checkout</a>
+    </div>
+        <div class="apple-pay-button-with-text apple-pay-button-black-with-text mt-2">
+        <span class="text">Checkout with</span>
+        <span class="logo"></span>
+    </div>
+
+
+    </div>
+
+
+
+
+{% endblock %}
