@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 
-from shop.models import ProductSizes
+from shop.models import ProductSizes, BasketItem
 
 
 class SizeForm(ModelForm):
@@ -26,4 +26,3 @@ class SizeForm(ModelForm):
             ),
             label="Size",
         )
-

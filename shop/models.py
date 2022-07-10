@@ -41,6 +41,8 @@ class ProductSizes(models.Model):
 class BasketItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     size = models.ForeignKey(ProductSize, on_delete=models.CASCADE)
+    qty = models.IntegerField(default=1)
+    price = models.IntegerField(default=0)
 
     def __str__(self):
         return self.product.name + ' (Size: {size})'.format(size=str(self.size.number))
