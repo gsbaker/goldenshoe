@@ -1,4 +1,5 @@
 $bg-color: #FFFAEB;
+$carousel-width: 500px;
 
 body {
   font-family: 'Sora', sans-serif;
@@ -13,10 +14,26 @@ body {
   }
 }
 
-$carousel-width: 500px;
+.text-gold {
+  color: darkgoldenrod;
+}
+
+#common-projects-ad {
+  background-size: cover;
+  background: url("/static/img/common-projects.png") no-repeat left center;
+  height: 500px;
+
+  a {
+    margin-top: 440px;
+  }
+}
+
+.br-20 {
+  border-radius: 20px;
+}
 
 .carousel {
-  width: $carousel-width*1.5;
+  width: $carousel-width * 1.35;
   .carousel-item {
     img {
       width: $carousel-width;

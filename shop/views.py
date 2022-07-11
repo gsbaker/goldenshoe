@@ -9,7 +9,12 @@ from shop.models import Product, BasketItem
 
 def index(request):
     template = loader.get_template('index.html')
-    return HttpResponse(template.render())
+    products = Product.objects.all()
+    context = {
+        'products': products,
+    }
+
+    return HttpResponse(template.render(context))
 
 
 def detail(request, product_id):

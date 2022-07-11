@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="container pt-4">
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-wrap justify-content-between">
             <div class="p-2 fs-5">
                 <h1 class="m-0">{{ product.name }}</h1>
                 <h3 class="text-muted">{{ product.brand }}</h3>
@@ -20,19 +20,20 @@
                     <div class="btn-group" role="group" aria-label="Basic example">
                         {% for size in form.sizes %}
                             {{ size.tag }}
-                                {% if size.choice_label in out_of_stock_sizes %}
-                                    <input class="btn-check" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
-                                    <label class="btn btn-outline-dark text-danger" disabled>
+                            {% if size.choice_label in out_of_stock_sizes %}
+                                <input class="btn-check" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                                <label class="btn btn-outline-dark text-danger" disabled>
                                     {{ size }}
-                                    </label>
-                                {% else %}
-                                    <label class="btn btn-outline-dark" for="{{ size.id_for_label }}">{{ size.choice_label }}</label>
-                                {% endif %}
+                                </label>
+                            {% else %}
+                                <label class="btn btn-outline-dark" for="{{ size.id_for_label }}">{{ size.choice_label }}</label>
+                            {% endif %}
                         {% endfor %}
                     </div>
                     <input type="submit" class="btn btn-outline-dark d-block mt-4" value="add to basket">
                 </form>
             </div>
+
             <div id="carouselExampleControls" class="carousel slide carousel-fade carousel-dark p-2" data-bs-interval="false">
                 {% for img in product.images.all %}
                     {% if forloop.first %}
@@ -41,7 +42,7 @@
                         </div>
                     {% else %}
                         <div class="carousel-item">
-                            <img src="/media/{{ img.image.name }}" alt="" class="d-block border border-dark text-black m-auto">
+                            <img src="/media/{{ img.image.name }}" alt="" class="d-block border border-dark m-auto">
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -55,7 +56,5 @@
                 </button>
             </div>
         </div>
-
-
     </div>
 {% endblock %}
