@@ -12,16 +12,6 @@ body {
   .text-purple:hover {
     color: #C13584; }
 
-#common-projects-ad {
-  background-size: cover;
-  background: url("/static/img/common-projects.png") no-repeat left center;
-  height: 500px; }
-  #common-projects-ad a {
-    margin-top: 440px; }
-
-#profile-picture {
-  max-width: 150px; }
-
 .br-20 {
   border-radius: 20px; }
 
@@ -32,6 +22,16 @@ body {
     border-radius: 20px; }
 
 .basket-img {
+  max-width: 150px; }
+
+#common-projects-ad {
+  background-size: cover;
+  background: url("/static/img/common-projects.png") no-repeat left center;
+  height: 500px; }
+  #common-projects-ad a {
+    margin-top: 440px; }
+
+#profile-picture {
   max-width: 150px; }
 
 #basket-content {

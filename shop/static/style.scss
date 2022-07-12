@@ -1,17 +1,14 @@
 $bg-color: #FFFAEB;
 $carousel-width: 500px;
 
+// elements
+
 body {
   font-family: 'Sora', sans-serif;
   background-color: $bg-color;
 }
 
-//.navbar-brand {
-//  color: darkgoldenrod;
-//  &:hover {
-//    color: darkgoldenrod;
-//  }
-//}
+// utility classes
 
 .text-gold {
   color: darkgoldenrod;
@@ -27,23 +24,11 @@ body {
   }
 }
 
-#common-projects-ad {
-  background-size: cover;
-  background: url("/static/img/common-projects.png") no-repeat left center;
-  height: 500px;
-
-  a {
-    margin-top: 440px;
-  }
-}
-
-#profile-picture {
-  max-width: 150px;
-}
-
 .br-20 {
   border-radius: 20px;
 }
+
+// classes
 
 .carousel {
   width: $carousel-width * 1.35;
@@ -59,24 +44,34 @@ body {
     max-width: 150px;
 }
 
+// ids
+
+#common-projects-ad {
+  background-size: cover;
+  background: url("/static/img/common-projects.png") no-repeat left center;
+  height: 500px;
+  a {
+    margin-top: 440px;
+  }
+}
+
+#profile-picture {
+  max-width: 150px;
+}
+
 #basket-content {
   padding-bottom: 40px;
 }
 
 #basket-footer {
   background-color: $bg-color;
-  //opacity: 0.9;
-}
-
-#checkout-buttons {
-  //max-width: 400px;
-  //margin: 0 auto;
 }
 
 #and-logo {
   max-width: 120px;
 }
 
+// apple pay
 @supports (-webkit-appearance: -apple-pay-button) {
     .apple-pay-button {
         display: inline-block;
