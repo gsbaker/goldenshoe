@@ -6,16 +6,25 @@ body {
   background-color: $bg-color;
 }
 
-.navbar-brand {
-  color: darkgoldenrod;
+//.navbar-brand {
+//  color: darkgoldenrod;
+//  &:hover {
+//    color: darkgoldenrod;
+//  }
+//}
 
+.text-gold {
+  color: darkgoldenrod;
   &:hover {
     color: darkgoldenrod;
   }
 }
 
-.text-gold {
-  color: darkgoldenrod;
+.text-purple {
+  color: #C13584;
+  &:hover {
+    color: #C13584;
+  }
 }
 
 #common-projects-ad {
@@ -51,7 +60,7 @@ body {
 }
 
 #basket-content {
-  padding-bottom: 190px;
+  padding-bottom: 40px;
 }
 
 #basket-footer {
@@ -62,6 +71,10 @@ body {
 #checkout-buttons {
   //max-width: 400px;
   //margin: 0 auto;
+}
+
+#and-logo {
+  max-width: 120px;
 }
 
 @supports (-webkit-appearance: -apple-pay-button) {

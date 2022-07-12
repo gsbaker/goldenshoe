@@ -2,13 +2,15 @@ body {
   font-family: 'Sora', sans-serif;
   background-color: #FFFAEB; }
 
-.navbar-brand {
-  color: darkgoldenrod; }
-  .navbar-brand:hover {
-    color: darkgoldenrod; }
-
 .text-gold {
   color: darkgoldenrod; }
+  .text-gold:hover {
+    color: darkgoldenrod; }
+
+.text-purple {
+  color: #C13584; }
+  .text-purple:hover {
+    color: #C13584; }
 
 #common-projects-ad {
   background-size: cover;
@@ -33,10 +35,13 @@ body {
   max-width: 150px; }
 
 #basket-content {
-  padding-bottom: 190px; }
+  padding-bottom: 40px; }
 
 #basket-footer {
   background-color: #FFFAEB; }
+
+#and-logo {
+  max-width: 120px; }
 
 @supports (-webkit-appearance: -apple-pay-button) {
   .apple-pay-button {
