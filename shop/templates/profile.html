@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container mt-2">
+        <div class="d-flex align-items-center justify-content-center">
+            {% load static %}
+            <img src="{% static 'img/profile.jpeg' %}" alt="" class="rounded-circle" id="profile-picture">
+            <div class="ps-4">
+                <h1 class="m-0">George Baker</h1>
+                <p class="m-0">gsbaker2000@icloud.com</p>
+            </div>
+        </div>
+
+        <div class="mt-4 d-flex justify-content-center">
+            <div class="p-2">
+                <a href="" class="btn btn-outline-dark">account</a>
+            </div>
+            <div class="p-2">
+                <a href="" class="btn btn-outline-dark">orders</a>
+            </div>
+            <div class="p-2">
+                <a href="" class="btn btn-outline-dark">returns</a>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <h2>faqs</h2>
+            <h4>how do I return my order?</h4>
+            <p>
+                If you've taken your new shoes for their <b>30-day trial run</b> and you've decided—for any reason— that
+                they're just not perfect, here's how to get started on a return.
+            </p>
+            <p>
+                On your <a href="">orders page</a>, scroll to one of the items you'd like to return and tap
+                "View or Manage" to open the order. Then within the order, select "Start Return".
+            </p>
+            <h4>how long will my order take to ship?</h4>
+            <p>Orders usually arrive within 1-2 Business Days. We use standard UK shipping on all orders.</p>
+            <h4>how can I talk to customer service?</h4>
+            <p>Still need help? Get in touch with our customer support team:</p>
+            <div class="small">
+            <p class="m-0">
+                <a href="mailto:support@goldenshoe.com">
+                    <i class="bi bi-envelope"></i> support@goldenshoe.com
+                </a>
+                 <span class="text-muted">(monitored 09:00-17:00 Mon-Fri)</span>
+            </p>
+            <p>
+                <i class="bi bi-telephone"></i> 01217742319
+                <span class="text-muted">(09:00-17:00 Mon-Fri)</span>
+            </p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+{% endblock %}

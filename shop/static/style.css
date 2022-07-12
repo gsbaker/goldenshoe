@@ -17,6 +17,9 @@ body {
   #common-projects-ad a {
     margin-top: 440px; }
 
+#profile-picture {
+  max-width: 150px; }
+
 .br-20 {
   border-radius: 20px; }
 

@@ -17,6 +17,10 @@ def index(request):
     return HttpResponse(template.render(context))
 
 
+def profile(request):
+    return render(request, template_name='profile.html')
+
+
 def detail(request, product_id):
     product = Product.objects.get(pk=product_id)
     if request.method == 'POST':
