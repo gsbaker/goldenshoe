@@ -24,8 +24,16 @@ body {
   }
 }
 
+.br-10 {
+  border-radius: 10px;
+}
+
 .br-20 {
   border-radius: 20px;
+}
+
+.text-strike {
+  text-decoration: line-through;
 }
 
 // classes
@@ -69,6 +77,13 @@ body {
 
 #and-logo {
   max-width: 120px;
+}
+
+#promo-code-inp {
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
 }
 
 // apple pay

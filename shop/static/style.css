@@ -12,8 +12,14 @@ body {
   .text-purple:hover {
     color: #C13584; }
 
+.br-10 {
+  border-radius: 10px; }
+
 .br-20 {
   border-radius: 20px; }
+
+.text-strike {
+  text-decoration: line-through; }
 
 .carousel {
   width: 675px; }
@@ -42,6 +48,12 @@ body {
 
 #and-logo {
   max-width: 120px; }
+
+#promo-code-inp {
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 20px; }
 
 @supports (-webkit-appearance: -apple-pay-button) {
   .apple-pay-button {

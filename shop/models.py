@@ -43,6 +43,21 @@ class BasketItem(models.Model):
     size = models.ForeignKey(ProductSize, on_delete=models.CASCADE)
     qty = models.IntegerField(default=1)
     price = models.IntegerField(default=0)
+    discount_price = models.DecimalField(blank=True, null=True, max_digits=6, decimal_places=2)
 
     def __str__(self):
         return self.product.name + ' (Size: {size})'.format(size=str(self.size.number))
+
+
+class PromoCode(models.Model):
+    code = models.CharField(max_length=200, default='')
+    active = models.BooleanField(default=False)
+    discount_options = (
+        ('%', 'percent'),
+        ('-', 'sum')
+    )
+    discount_type = models.CharField(max_length=10, choices=discount_options, default='%')
+    discount_amount = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.code

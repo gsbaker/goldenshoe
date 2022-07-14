@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 
-from shop.models import ProductSizes, BasketItem
+from shop.models import ProductSizes, BasketItem, PromoCode
 
 
 class SizeForm(ModelForm):
@@ -26,3 +26,19 @@ class SizeForm(ModelForm):
             ),
             label="Size",
         )
+
+
+class PromoCodeForm(ModelForm):
+    class Meta:
+        model = PromoCode
+        fields = ['code']
+
+    def __init__(self, *args, **kwargs):
+        super(PromoCodeForm, self).__init__(*args, **kwargs)
+        self.fields['code'].label = ''
+        self.fields['code'].widget.attrs.update(
+            {
+                'id': 'promo-code-inp',
+            }
+        )
+
