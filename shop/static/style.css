@@ -34,8 +34,8 @@ body {
   background-size: cover;
   background: url("/static/img/common-projects.png") no-repeat left center;
   height: 500px; }
-  #common-projects-ad a {
-    margin-top: 440px; }
+  #common-projects-ad p {
+    margin-top: 450px; }
 
 #profile-picture {
   max-width: 150px; }
