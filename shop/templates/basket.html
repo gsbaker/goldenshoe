@@ -24,7 +24,7 @@
                 </div>
                 <div class="p-2">
                     <p class="m-0">{{ basket_item.product.brand }} {{ basket_item.product.name }}</p>
-                    <p class="m-0">Size: {{ basket_item.size }}</p>
+                    <p class="m-0">{{ basket_item.product.color }} (Size {{ basket_item.size }})</p>
                     <p class="small">
                         Qty: {{ basket_item.qty }}
                          <a href="{% url 'shop:increment-basket-item' basket_item.id %}" class="text-decoration-none text-black"><i class="bi bi-plus-circle"></i></a>
