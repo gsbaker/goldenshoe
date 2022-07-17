@@ -9,6 +9,11 @@ from shop.forms import SizeForm, PromoCodeForm
 from shop.models import Product, BasketItem, PromoCode
 
 
+def navigation(request):
+    template = loader.get_template('navigation.html')
+    return template.render()
+
+
 def index(request):
     template = loader.get_template('index.html')
     products = Product.objects.all()
@@ -16,7 +21,7 @@ def index(request):
         'products': products,
     }
 
-    return HttpResponse(template.render(context))
+    return render(request, 'index.html', context)
 
 
 def profile(request):

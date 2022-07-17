@@ -1,11 +1,19 @@
 body {
   font-family: 'Sora', sans-serif;
-  background-color: #FFFAEB; }
+  background-color: #FFFAEB;
+  padding-top: 100px; }
+
+nav {
+  background-color: #CC9900; }
+
+::selection {
+  background: darkgoldenrod;
+  color: #FFFAEB; }
 
 .text-gold {
-  color: darkgoldenrod; }
+  color: #CC9900; }
   .text-gold:hover {
-    color: darkgoldenrod; }
+    color: #CC9900; }
 
 .text-purple {
   color: #C13584; }
@@ -21,6 +29,19 @@ body {
 .text-strike {
   text-decoration: line-through; }
 
+.fixed-top-2 {
+  margin-top: 28px; }
+
+.bg-accent-dark {
+  background-color: #CC9900;
+  color: #FFFAEB; }
+
+.text-light {
+  color: #FFFAEB; }
+
+.navbar-brand {
+  color: #FFFAEB; }
+
 .carousel {
   width: 675px; }
   .carousel .carousel-item img {
@@ -29,6 +50,9 @@ body {
 
 .basket-img {
   max-width: 150px; }
+
+#navbar1 {
+  background-color: #3D2E00; }
 
 #common-projects-ad {
   background-size: cover;
@@ -40,11 +64,8 @@ body {
 #profile-picture {
   max-width: 150px; }
 
-#basket-content {
-  padding-bottom: 40px; }
-
-#basket-footer {
-  background-color: #FFFAEB; }
+#basket-buttons {
+  max-width: 350px; }
 
 #and-logo {
   max-width: 120px; }
@@ -54,6 +75,9 @@ body {
   padding: 10px;
   border: 1px solid black;
   border-radius: 20px; }
+
+#footer-help {
+  transform: rotate(2deg); }
 
 @supports (-webkit-appearance: -apple-pay-button) {
   .apple-pay-button {

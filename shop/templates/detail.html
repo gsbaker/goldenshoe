@@ -39,11 +39,11 @@
                 {% for img in product.images.all %}
                     {% if forloop.first %}
                         <div class="carousel-item active">
-                            <img src="/media/{{ img.image.name }}" alt="" class="d-block border border-dark m-auto">
+                            <img src="/media/{{ img.image.name }}" alt="" class="d-block border m-auto">
                         </div>
                     {% else %}
                         <div class="carousel-item">
-                            <img src="/media/{{ img.image.name }}" alt="" class="d-block border border-dark m-auto">
+                            <img src="/media/{{ img.image.name }}" alt="" class="d-block border m-auto">
                         </div>
                     {% endif %}
                 {% endfor %}
