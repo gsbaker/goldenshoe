@@ -43,13 +43,13 @@ nav {
   color: #FFFAEB; }
 
 .carousel {
-  width: 675px; }
-  .carousel .carousel-item img {
-    width: 500px;
-    border-radius: 20px; }
+  max-width: 540px; }
 
 .basket-img {
   max-width: 150px; }
+
+#product-info {
+  max-width: 400px; }
 
 #navbar1 {
   background-color: #3D2E00; }

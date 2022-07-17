@@ -4,66 +4,70 @@
     <div class="container" id="basket-content">
 
         <h1>Basket</h1>
-        <form action="" method="post">
-            {% csrf_token %}
-            <div class="container mt-2 mb-4">
-                <p class="m-1">Promo Code</p>
-                {{ form }}
-                <input type="submit" class="btn btn-outline-dark ms-2 br-20" value="Apply">
-            </div>
-        </form>
-
 
         {% if basket_items %}
-            {% for basket_item in basket_items %}
-            <div class="d-flex align-items-center">
-                <div class="p-2">
-                    <img src="/media/{{ basket_item.product.images.all.0.image.name }}" alt="" class="basket-img border border-dark rounded-3">
-                </div>
-                <div class="p-2">
-                    <p class="m-0">{{ basket_item.product.brand }} {{ basket_item.product.name }}</p>
-                    <p class="m-0">{{ basket_item.product.color }} (Size {{ basket_item.size }})</p>
-                    <p class="small">
-                        Qty: {{ basket_item.qty }}
-                         <a href="{% url 'shop:increment-basket-item' basket_item.id %}" class="text-decoration-none text-black"><i class="bi bi-plus-circle"></i></a>
-                        {% if basket_item.qty > 1 %}
-                         <a href="{% url 'shop:decrease-basket-item' basket_item.id %}" class="text-decoration-none text-black"><i class="bi bi-dash-circle"></i></a>
-                        {% endif %}
-                    </p>
 
-                    <p class="fw-bold m-0">
-                        {% if basket_item.discount_price == basket_item.price %}
-                            £{{ basket_item.price }}
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="container mt-2 mb-4">
+                    <p class="m-1">Promo Code</p>
+                    {{ form }}
+                    <input type="submit" class="btn btn-outline-dark ms-2 br-20" value="Apply">
+                </div>
+            </form>
+
+            {% for basket_item in basket_items %}
+                <div class="d-flex align-items-center">
+                    <div class="p-2">
+                        <img src="/media/{{ basket_item.product.images.all.0.image.name }}" alt=""
+                             class="basket-img border rounded-3">
+                    </div>
+                    <div class="p-2">
+                        <p class="m-0">{{ basket_item.product.brand }} {{ basket_item.product.name }}</p>
+                        <p class="m-0">{{ basket_item.product.color }} (Size {{ basket_item.size }})</p>
+                        <p class="small">
+                            Qty: {{ basket_item.qty }}
+                            <a href="{% url 'shop:increment-basket-item' basket_item.id %}"
+                               class="text-decoration-none text-black"><i class="bi bi-plus-circle"></i></a>
+                            {% if basket_item.qty > 1 %}
+                                <a href="{% url 'shop:decrease-basket-item' basket_item.id %}"
+                                   class="text-decoration-none text-black"><i class="bi bi-dash-circle"></i></a>
+                            {% endif %}
+                        </p>
+
+                        <p class="fw-bold m-0">
+                            {% if basket_item.discount_price == basket_item.price %}
+                                £{{ basket_item.price }}
+                            {% else %}
+                                <span class="text-muted fw-normal text-strike">£{{ basket_item.price }}</span> £
+                                {{ basket_item.discount_price }}
+                            {% endif %}
+                        </p>
+                        <a href="{% url 'shop:delete-basket-item' basket_item.id %}"
+                           class="text-danger text-decoration-none small">Delete <i class="bi bi-trash"></i></a>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+            <div id="checkout-buttons" class="m-auto">
+
+                <div class="d-grid gap-2 m-0 p-3" id="basket-buttons">
+                    <h4>
+                        {% if discount_total == total %}
+                            Total: £{{ total }}
                         {% else %}
-                            <span class="text-muted fw-normal text-strike">£{{ basket_item.price }}</span> £{{ basket_item.discount_price }}
+                            Total: <span class="text-muted text-strike">£{{ total }}</span> £{{ discount_total }}
                         {% endif %}
-                    </p>
-                    <a href="{% url 'shop:delete-basket-item' basket_item.id %}" class="text-danger text-decoration-none small">Delete <i class="bi bi-trash"></i></a>
+                    </h4>
+                    <button class="apple-pay-button apple-pay-button-black apple-pay-button-with-text btn">Apple Pay
+                    </button>
+                    <a class="btn btn-dark">Check out</a>
                 </div>
             </div>
-        {% endfor %}
-
-
-        <div id="checkout-buttons" class="m-auto">
-
-        <div class="d-grid gap-2 m-0 p-3" id="basket-buttons">
-            <h4>
-                {% if discount_total == total %}
-                    Total: £{{ total }}
-                {% else %}
-                    Total: <span class="text-muted text-strike">£{{ total }}</span> £{{ discount_total }}
-                {% endif %}
-
-            </h4>
-                <button class="apple-pay-button apple-pay-button-black apple-pay-button-with-text btn">Apple Pay</button>
-                <a class="btn btn-dark">Check out</a>
-        </div>
-        </div>
-
         {% else %}
             <p class="fs-5">Oops, your basket is empty</p>
         {% endif %}
-
     </div>
 
 {% endblock %}

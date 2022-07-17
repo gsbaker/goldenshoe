@@ -14,6 +14,7 @@ class Product(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, default='M')
     color = models.CharField(max_length=200, default='')
     brand = models.CharField(max_length=200, default='')
+    description = models.TextField(default='')
 
     def __str__(self):
         return '{gender} '.format(gender=self.gender) + self.name + ' ({brand})'.format(brand=self.brand)

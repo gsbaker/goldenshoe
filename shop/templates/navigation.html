@@ -1,20 +1,14 @@
 <nav class="navbar fixed-top p-0">
     <div class="w-100" id="navbar1">
         <p class="small text-center mb-0 p-1">
-        <a href="/basket/" class="text-decoration-none text-white">
-            {% if basket_count == 0 %}
-                ({{ basket_count }} items)
-            {% else %}
+            <a href="/basket/" class="text-decoration-none text-white">
                 ({{ basket_count }} items) &nbsp;
                 {% if discount_total == total %}
                     £{{ total }}
                 {% else %}
                     <span class="text-strike">£{{ total }}</span> £{{ discount_total }}
                 {% endif %}
-            {% endif %}
-
-        </a>
-
+            </a>
         </p>
     </div>
 </nav>

@@ -1,27 +1,24 @@
-$bg-color: #FFFAEB;
-$carousel-width: 500px;
+$light-gold: #FFFAEB;
+$carousel-width: 400px;
 $gold: #CC9900;
 
 // elements
-
 body {
   font-family: 'Sora', sans-serif;
-  background-color: $bg-color;
+  background-color: $light-gold;
   padding-top: 100px;
 }
 
 nav {
-  //background-color: #B88A00;
-  background-color: #CC9900;
+  background-color: $gold;
 }
 
 ::selection {
   background: darkgoldenrod;
-  color: $bg-color;
+  color: $light-gold;
 }
 
 // utility classes
-
 .text-gold {
   color: #CC9900;
   &:hover {
@@ -54,27 +51,20 @@ nav {
 
 .bg-accent-dark {
   background-color: #CC9900;
-  color: $bg-color;
+  color: $light-gold;
 }
 
 .text-light {
-  color: $bg-color;
+  color: $light-gold;
 }
 
 // classes
-
 .navbar-brand {
-  color: $bg-color;
+  color: $light-gold;
 }
 
 .carousel {
-  width: $carousel-width * 1.35;
-  .carousel-item {
-    img {
-      width: $carousel-width;
-      border-radius: 20px;
-    }
-  }
+  max-width: $carousel-width * 1.35;
 }
 
 .basket-img {
@@ -82,6 +72,10 @@ nav {
 }
 
 // ids
+
+#product-info {
+  max-width: 400px;
+}
 
 #navbar1 {
   background-color: #3D2E00;
