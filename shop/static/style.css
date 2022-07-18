@@ -39,6 +39,9 @@ nav {
 .text-light {
   color: #FFFAEB; }
 
+.mw-350 {
+  max-width: 350px; }
+
 .navbar-brand {
   color: #FFFAEB; }
 
@@ -61,6 +64,9 @@ nav {
   #common-projects-ad p {
     margin-top: 450px; }
 
+#ad-img {
+  max-height: 600px; }
+
 #profile-picture {
   max-width: 150px; }
 
@@ -72,9 +78,11 @@ nav {
 
 #promo-code-inp {
   max-width: 400px;
-  padding: 10px;
+  padding: 7px 15px;
   border: 1px solid black;
-  border-radius: 20px; }
+  border-radius: 20px;
+  background-color: #FFFAEB;
+  box-sizing: border-box; }
 
 #footer-help {
   transform: rotate(2deg); }

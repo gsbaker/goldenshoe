@@ -14,32 +14,45 @@
             <a href="" class="btn btn-outline-dark btn-lg br-20">shop women</a>
         </div>
     </div>
-
-        <a href="/product/3">
-            <div id="common-projects-ad" class="mt-4 rounded-4 text-black">
-                <p class="float-end me-4">shop common projects <i class="bi bi-arrow-right"></i></p>
-            </div>
-        </a>
-
+        <div class="text-center mt-4">
+            <a href="/product/3" class="text-black text-decoration-none">
+                {% load static %}
+                <img src="{% static 'img/common-projects.png' %}" alt="" class="img-fluid rounded-4" id="ad-img">
+                <p>shop common projects <i class="bi bi-arrow-right"></i></p>
+            </a>
+        </div>
     </div>
 
     <div class="container mt-5">
     <h2>shoes we love <span class="text-danger"><i class="bi bi-heart-fill"></i></span> </h2>
-    {% for product in products %}
-        {% if forloop.first %}
-            <div class="row p-2">
-        {% endif %}
-        <div class="col p-4">
-        <a href="/product/{{ product.id }}" class="text-decoration-none">
-            <img src="/media/{{ product.images.all.0.image.name }}" class="img-fluid rounded-4 border" alt="">
-            <p class="small m-0 pt-2 text-black">{{ product.brand }} {{ product.name }}</p>
-            <p class="small text-muted">£{{ product.price }}</p>
-        </a>
+{#    {% for product in products %}#}
+{#        {% if forloop.first %}#}
+{#            <div class="row p-2">#}
+{#        {% endif %}#}
+{#        <div class="col p-4">#}
+{#        <a href="/product/{{ product.id }}" class="text-decoration-none">#}
+{#            <img src="/media/{{ product.images.all.0.image.name }}" class="img-fluid rounded-4 border" alt="">#}
+{#            <p class="small m-0 pt-2 text-black">{{ product.brand }} {{ product.name }}</p>#}
+{#            <p class="small text-muted">£{{ product.price }}</p>#}
+{#        </a>#}
+{##}
+{#        </div>#}
+{#        {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}#}
+{#        {% if forloop.last %}</div>{% endif %}#}
+{#    {% endfor %}#}
+    <div class="d-inline-flex flex-wrap justify-content-center">
+        {% for product in products %}
+            <a href="/product/{{ product.id }}" class="text-decoration-none">
+                <div class="p-2">
+                    <img src="/media/{{ product.images.all.0.image.name }}" alt="" class="rounded-4 border mw-350">
+                    <p class="small m-0 pt-2 text-black">{{ product.brand }} {{ product.name }}</p>
+                    <p class="small text-muted">£{{ product.price }}</p>
+                </div>
+            </a>
 
-        </div>
-        {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
-        {% if forloop.last %}</div>{% endif %}
-    {% endfor %}
+        {% endfor %}
+    </div>
+
     </div>
 
 {% endblock content %}

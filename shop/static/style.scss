@@ -58,6 +58,10 @@ nav {
   color: $light-gold;
 }
 
+.mw-350 {
+  max-width: 350px;
+}
+
 // classes
 .navbar-brand {
   color: $light-gold;
@@ -90,6 +94,10 @@ nav {
   }
 }
 
+#ad-img {
+  max-height: 600px;
+}
+
 #profile-picture {
   max-width: 150px;
 }
@@ -105,9 +113,11 @@ nav {
 
 #promo-code-inp {
   max-width: 400px;
-  padding: 10px;
+  padding: 7px 15px;
   border: 1px solid black;
   border-radius: 20px;
+  background-color: $light-gold;
+  box-sizing: border-box;
 }
 
 #footer-help {
