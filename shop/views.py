@@ -59,7 +59,24 @@ def detail(request, product_id):
         'out_of_stock_sizes': out_of_stock_sizes,
     }
     return render(request, 'detail.html', context)
-    # return render(request, 'detail.html', context)
+
+
+def men(request):
+    products = Product.objects.filter(gender='M')
+    context = {
+        'products': products,
+        'gender': 'Men',
+    }
+    return render(request, 'products.html', context)
+
+
+def women(request):
+    products = Product.objects.filter(gender='F')
+    context = {
+        'products': products,
+        'gender': 'Women',
+    }
+    return render(request, 'products.html', context)
 
 
 def basket(request):

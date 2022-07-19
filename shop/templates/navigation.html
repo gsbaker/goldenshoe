@@ -22,9 +22,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="/">home</a>
-                <a class="nav-link" href="/">men</a>
-                <a class="nav-link" href="/">women</a>
+                <a {% if request.resolver_match.url_name == 'index' %}class="active nav-link"{% else %}class="nav-link"{% endif %} aria-current="page" href="/">home</a>
+                <a {% if request.resolver_match.url_name == 'men' %}class="active nav-link"{% else %}class="nav-link"{% endif %} href="/men">men</a>
+                <a {% if request.resolver_match.url_name == 'women' %}class="active nav-link"{% else %}class="nav-link"{% endif %} href="/women">women</a>
             </div>
             <div class="ms-auto pe-4">
                 <div class="navbar-nav">

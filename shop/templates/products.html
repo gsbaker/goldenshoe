@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+    <div class="pb-4">
+        <a href="/" class="text-black fs-5">
+            <i class="bi bi-arrow-left"></i> back
+        </a>
+    </div>
+
+    <h1>{{ gender }}</h1>
+    <div class="d-inline-flex flex-wrap justify-content-center">
+        {% for product in products %}
+            <a href="/product/{{ product.id }}" class="text-decoration-none">
+                <div class="p-2">
+                    <img src="/media/{{ product.images.all.0.image.name }}" alt="" class="rounded-4 border mw-350">
+                    <p class="small m-0 pt-2 text-black">{{ product.brand }} {{ product.name }}</p>
+                    <p class="small text-muted">£{{ product.price }}</p>
+                </div>
+            </a>
+
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}
